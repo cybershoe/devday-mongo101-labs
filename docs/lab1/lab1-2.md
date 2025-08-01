@@ -27,7 +27,7 @@ and paste it into the `URI` field in the New Connection dialog box.
 ![Image of the New Connection dialog box](images/compass-enter-connection-string.png)
 
 5. Compass should now connect to your MongoDB cluster. You should see several
-default and sample database listed along the left hand side.
+default and sample databases listed along the left hand side.
 
 ![Image of the Compass GUI connected to the lab cluster](images/compass-connected.png)
 

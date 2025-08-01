@@ -4,7 +4,7 @@ the many [drivers](https://www.mongodb.com/docs/drivers/) available for your
 programming language of choice, you will use a 
 [connection string](https://www.mongodb.com/docs/manual/reference/connection-string/)
 to tell your application how to find your cluster members, what credentials
-to you, and other paramaters to establish that initial connection.
+to use, and other paramaters to establish that initial connection.
 
 ## Elements of a connection string
 
