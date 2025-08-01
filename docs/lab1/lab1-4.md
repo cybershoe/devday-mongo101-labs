@@ -25,8 +25,65 @@ interact with include:
 ## LAB: Connect with PyMongo
 
 1. On your jumphost, double-click the "VSCodium" icon on your desktop.
-![Desktop showing the VSCodium Icon](images/vscodium-icon.png)
+  ![Desktop showing the VSCodium Icon](images/vscodium-icon.png)
 
-> 👆 **Note**: [VSCodium](https://vscodium.com/) is an open-source binary build
-  of [vscode](https://github.com/Microsoft/vscode).
+  > 👆 **Note**: [VSCodium](https://vscodium.com/) is an open-source binary build
+    of [vscode](https://github.com/Microsoft/vscode).
 
+  > 👆 **Note**: VSCodium should automatically open to the lab folder. If it 
+    doesn't, click "File -> Open Folder", browse to the `/home/ubuntu/lab`
+    folder, and open it.
+
+  > 👆 **Note**: The first time you launch VSCodium, you will be asked if you
+    trust the authors of the `lab` directory. Click "Yes, I trust the authors"
+    to continue.
+    ![Folder trust dialog](images/codium-trust-authors.png)
+
+2. In the lab folder structre, open the file lab1-4/connect.py and read it.
+  There are a few sections to the file:
+
+  First we load the require modules, including the core MongoDB client class:
+  ```python
+  from pymongo import MongoClient
+  from pprint import pprint
+  ```
+
+  Next we define a variable for our connection string. Replace 
+  `your connection string here` with your Atlas connection string from lab 1-1:
+  ```python
+  MONGO_URI = "your connection string here"
+  ```
+
+  The next three lines create a MongoDB client, and create objects for one of
+  the example databases, and a collection within that database:
+  ```python
+  client = MongoClient(MONGO_URI)
+  db = client["sample_restaurants"]
+  collection = db["restaurants"]
+  ```
+
+  The next line is where the actual database query is executed. We call the
+  `.find_one()` method on the collection object. This method returns a single
+  document that matches the query predicate:
+  ```python
+  response = collection.find_one({"restaurant_id": "40356151"}, {"_id": 0})
+  ```
+
+  Finally, we format and print the response to the console:
+  ```python
+  pprint(response)
+  ```
+
+3. After you have replaced the placeholder text with your Atlas connection
+  string, save the file (Ctrl+S or File -> Save)
+
+4. Open a terminal (Ctrl+Shift+` or View -> Terminal), change to the lab1-4
+  directory, and run the `connect.py` program.
+  ```bash
+  cd ~/lab/lab1-4
+  python connect.py
+  ```
+
+  You should see the record for the restaurant "Brunos on the Boulevard" output
+  on the console.
+  ![Successful run of lab 1-4](images/lab-1-4-output.png)
