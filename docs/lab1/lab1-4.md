@@ -89,3 +89,5 @@ interact with include:
   You should see the record for the restaurant "Brunos on the Boulevard" output
   on the console.
   ![Successful run of lab 1-4](images/lab-1-4-output.png)
+
+When you are done, proceed to the end of this lab.

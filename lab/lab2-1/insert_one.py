@@ -1,6 +1,4 @@
 from pymongo import MongoClient
-from pprint import pprint
-from bson import decode
 from os import getenv
 
 MONGO_URI = getenv("MDB_URI")  # Don't worry about your connection string being in the code; it's set as an environment variable.
@@ -9,7 +7,7 @@ client = MongoClient(MONGO_URI)
 db = client["lab2_db"]
 collection = db["people"]
 
-person = {
+person = {  # Note that this is not a flat table, but a nested document that contains arrays and objects
   "name": {
     "first": "Fred",
     "last": "Flintstone"
@@ -34,6 +32,6 @@ person = {
   ]
 }
 
-response = collection.insert_one(person)
+response = collection.insert_one(person)  # The object is inserted directly with no mapping to flat tables
 
-pprint(response)
+print(f"Acknowledged: {response.acknowledged}\nInserted _id: {response.inserted_id}")

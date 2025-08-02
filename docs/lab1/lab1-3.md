@@ -67,4 +67,4 @@ Compass, but in a command-line interface.
 
   ![mongosh list of databases](images/mongosh-show-dbs.png)
 
-When you are done, proceed to the next chapter.
+When you are done, proceed to the next lab.

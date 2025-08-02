@@ -32,3 +32,5 @@ MongoDB Atlas lab cluster.
   > [!NOTE] 
   > Keep this string handy. It's for your own personal MongoDB Atlas
   > lab cluster, and you will be using it during the rest of the labs.
+
+When you are done, proceed to the next lab.

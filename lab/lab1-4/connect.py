@@ -1,6 +1,5 @@
 from pymongo import MongoClient
 from pprint import pprint
-from bson import decode
 
 MONGO_URI = "your connection string here"
 

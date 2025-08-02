@@ -4,3 +4,6 @@ Welcome to MongoDB 101! These hands-on exercises will take you through the basic
 
 > [!TIP]
 > The earlier labs will be very step-by-step and involve either pre-written code or copying and pasting commands. Later labs will require more independent problem solving. This is by design. Feel free to refer back to earlier labs if you need a refresher on a certain tool or command, or ask your neighbour or lab facilitator for pointers. No one is keeping score; we're here to learn and explore together.
+
+> [!NOTE]
+> These labs are a 101-level introduction to basic MongoDB operations. If you already have some experience working with MongoDB, feel free to go off-script and explore the lab environment on your own. Each lab environment is its own isolated cluster; you won't accidentally break anybody elses labs.
