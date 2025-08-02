@@ -45,7 +45,7 @@ The flexibility of the document model makes inserting data into MongoDB extremel
   > [!TIP]
   > Databases and collections don't need to be pre-created; the first time you insert a document, the collection (and database, if necessary) will be automatically created.
 
-4. Back in VSCodium, look at the `collection.insert_one()` instruction. Note that there is no mapping of the object's properties to fixed columns; the document will be the whole object.
+4. Back in VSCodium, look at the `collection.insert_one()` instruction. This is a collection method, and it takes the object to insert as its first argument. Note that there is no mapping of the object's properties to fixed columns; the document will be the whole object.
 
   > [!NOTE]
   > These labs are primarily written in Python, due to its popularity and readability. The methods we will be using are not unique to the Python driver, but they may be named differently in different languages to match the naming conventions of those languages. For example, the `.insert_one()` method in PyMongo is analagous to the `.insertOne()` method in mongosh/JavasScript, or the `.InsertOne()` method in .NET/C#.

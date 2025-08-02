@@ -90,4 +90,7 @@ interact with include:
   on the console.
   ![Successful run of lab 1-4](images/lab-1-4-output.png)
 
+> [!NOTE]
+> You won't need to copy your connection string for every lab. In the lab environment, it has been pre-populated for you as the `$MDB_URI` environment variable. Future labs will use this variable instead of requiring you to input it every time.
+
 When you are done, proceed to the end of this lab.
