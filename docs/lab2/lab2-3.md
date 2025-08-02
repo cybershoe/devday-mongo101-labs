@@ -56,6 +56,9 @@ As you saw, re-running the insert simply created a new document. To replace an e
   > We're using the `_id` of the document as the filter condition because it is guaranteed to be unique. We don't need to do this, you can use any query filter that will return the correct record; however, since `replace_one()` only replaces one document, even if more than one match the query filter, using a unique key ensures that we replace the document that we intend to.
 
 4. Run `replace_book.py` and observe the output.
+  ```bash
+  python replace_book.py 
+  ```
   <details>
   <summary>Expected results</summary>
 
@@ -79,17 +82,72 @@ What if you want only one instance of a document in your collection, but you don
 1. Open the `upsert_book.py` program and examine the code. What do you expect to happen when this program is run for the first time?
 
 2. Run `upsert_book.py` and observe the output.
+  ```bash
+  python upsert_book.py 
+  ```
+  <details>
+    <summary>Expected results</summary>
 
-<details>
+    Because `replace_one()` is looking for a document where `title` is equal to `"War and Peace"`. and no such document exists, it does not modify the collection.
+
+    ```bash
+    ubuntu@ip-10-0-1-219:~/lab/lab2-3$ python upsert_book.py 
+    Acknowledged: True
+    Documents matched: 0
+    Documents modified: 0
+    Upserted document: None
+    ubuntu@ip-10-0-1-219:~/lab/lab2-3$
+  ```
+  </details>
+
+3. Modify `upsert_book.py` to add the `upsert: True` argument to the call to `replace_one()` (remember to save!)
+  <details>
+  <summary>Modified code</summary>
+
+  ```
+  response = collection.replace_one({"title": book['title']}, book, upsert=True)
+  ```
+
+4. Run `upsert_book.py` again and observe the output.
+  ```bash
+  python upsert_book.py 
+  ```
+  <details>
   <summary>Expected results</summary>
-
-  Because `replace_one()` is looking for a document where `title` is equal to `"War and Peace"`. and no such document exists, it does not modify the collection.
+  Because `upsert=True`, a new document is created and the new `_id` is returned.
 
   ```bash
-  ubuntu@ip-10-0-1-219:~/lab/lab2-3$ python replace_book.py 
+  ubuntu@ip-10-0-1-219:~/lab/lab2-3$ python upsert_book.py 
   Acknowledged: True
   Documents matched: 0
   Documents modified: 0
-  ubuntu@ip-10-0-1-219:~/lab/lab2-3$
+  Upserted document: 688e853655f2643fb2e58dd3
+  ubuntu@ip-10-0-1-219:~/lab/lab2-3$ 
   ```
-  </details>
+
+5. There is another error in this document. War and Peace was released in 1869, not 1868. Correct the `book` object, and run `upsert_book` one more time.
+  ```bash
+  python upsert_book.py 
+  ```
+  <details>
+  <summary>Expected results</summary>
+  Because a document with `title` equal to `War and Peace` already exists, it is replaced by the new document. You can verify this in Compass.
+
+  ```bash
+  ubuntu@ip-10-0-1-219:~/lab/lab2-3$ python upsert_book.py 
+  Acknowledged: True
+  Documents matched: 1
+  Documents modified: 1
+  Upserted document: None
+  ubuntu@ip-10-0-1-219:~/lab/lab2-3$ 
+  ```
+
+## Updating documents
+
+`replace_one()`, as the name implies, replaces the entire document. What if we only want to update a few fields, or we don't know what should be in the rest of the document? We could `find_one()`, update the object in code, and then call `replace_one()`, but that is an additional database call, and also raises consistency issues if not performed in a transaction.
+
+Instead we can use the `update_one()` and `update_many()` methods. These behave similarly to `replace_one()`, but they only update specific fields, rather than replacing the entire document.
+
+1. Open Compass and find the document in the `books` collection for The Great Gatsby. There is another error in this document: The Great Gatsby was released in 1925, not 1924.
+
+2. In VSCodium, open the `update_book.py` program and examine the code. 

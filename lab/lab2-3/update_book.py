@@ -8,18 +8,16 @@ client = MongoClient(MONGO_URI)
 db = client["lab2_db"]
 collection = db["books"]
 
-book = {
-  "title": "War and Peace",
-  "author": {
-    "first": "Leo",
-    "last": "Tolstoy"
-  },
-  "published_year": 1868
+query = {
+  "title": "The Great Gatsby"
 }
 
-response = collection.replace_one({"title": book['title']}, book)
+update = {
+   # put your update document here
+}
+
+response = collection.replace_one(query, update)
 
 print(f"Acknowledged: {response.acknowledged}")
 print(f"Documents matched: {response.matched_count}")
 print(f"Documents modified: {response.modified_count}")
-print(f"Upserted document: {response.upserted_id}")
