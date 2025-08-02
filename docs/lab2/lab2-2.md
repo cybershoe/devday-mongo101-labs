@@ -53,4 +53,6 @@ You can retun all fields except for specific ones by giving the fields you want 
 
 ## Retrieving multiple documents
 
-Much like `insert_one()`&mdash;which takes a single document&mdash;has its counterpart `insert_many()` that takes a list of document, `find_one()` also has a counterpart, `find()`, which returns a cursor instead of a single record.
+Much like `insert_one()`&mdash;which takes a single document&mdash;has its counterpart `insert_many()` that takes a list of document, `find_one()` also has a counterpart, `find()`, which returns a [cursor](https://www.mongodb.com/docs/manual/core/cursors/) instead of a single record. A cursor is an iterable object that allows you to process query results sequentially or in batches.
+
+1. In VSCodium, open the file lab2-2/find.py and examine the code. 
