@@ -8,6 +8,6 @@ client = MongoClient(MONGO_URI)
 db = client["sample_restaurants"]
 collection = db["restaurants"]
 
-response = collection.find_one({"restaurant_id": "40356151"}, {"_id": 0})
+response = collection.find_one({"restaurant_id": "40356151"})
 
 pprint(response)
