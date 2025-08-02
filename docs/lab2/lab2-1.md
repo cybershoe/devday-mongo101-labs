@@ -13,6 +13,9 @@ The flexibility of the document model makes inserting data into MongoDB extremel
 
 2. In VSCodium, open the file lab2-1/insert_one.py and examine the code. Note the `person` dict: there is no predefined schema that this object is adhering to.
 
+  <details>
+  <summary>See code</summary>
+
   ```python
   fred = {
     "name": {
@@ -39,6 +42,7 @@ The flexibility of the document model makes inserting data into MongoDB extremel
     ]
   }
   ```
+  </details>
 
   Note the names of the database (`lab2_db`) and collection (`people`). Check in Compass to verify that neither the database nor collection exist yet.
 
