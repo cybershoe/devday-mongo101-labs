@@ -17,14 +17,15 @@ Compass, but in a command-line interface.
 2. Run the following command, replacing `<connection string>` with your own
    connection string from lab 1-1.
 
-  ```
+  ```bash
   mongosh <connection string>
   ```
 
-  > 👆 **Note**: In the terminal you need to use `Shift+Ctrl+C` and 
-    `Shift+Ctrl+V` to copy and paste, respectively.
+  > [!TIP]
+  > In the terminal you need to use `Shift+Ctrl+C` and `Shift+Ctrl+V` to copy and paste, respectively.
 
-  > 👆 **Note**: If you accidentally include the newline at the end of your
+  > [!NOTE] 
+  > If you accidentally include the newline at the end of your
     connection string, the terminal will warn you that the text you are entering
     could potentially execute a command. To disable this warning, select "Disable
     dialog" from the drop-down menu in the warning pop-up.
@@ -35,33 +36,35 @@ Compass, but in a command-line interface.
 
   ![Terminal window with a connection via mongosh](images/mongosh-connect.png)
 
-  > 🚩 **Warning!**: For the purposes of this lab, we're simply pasting the
+  > [!WARNING] 
+  > For the purposes of this lab, we're simply pasting the
     connection string in its entirety, but this could result in the password
     being saved in your `.bash_history` file. See below for a safer way.
 
 3. As noted, it's generally not good practice to include passwords in your
-   command history. Let's try again, but this time we'll prompt for a password.
+  command history. Let's try again, but this time we'll prompt for a password.
 
-   Enter `Ctrl+D` to exit mongosh. Press the up arrow to bring up the last
-   command entered, and go back and remove your password from the connection
-   string on the command line.
+  Enter `Ctrl+D` to exit mongosh. Press the up arrow to bring up the last
+  command entered, and go back and remove your password from the connection
+  string on the command line.
 
-   > 💭 **Reminder**: The credentials in your connection string are in the form
-   of `username:password`, and are the next component after `mongodb+srv://`.
-   Remove the first `:`, and everything up to but not including the `@` sign.
+  > [!NOTE] 
+  > The credentials in your connection string are in the form
+    of `username:password`, and are the next component after `mongodb+srv://`.
+    Remove the first `:`, and everything up to but not including the `@` sign.
 
-   Now when you run the command, you should be prompted to enter your password
-   as shown below:
+  Now when you run the command, you should be prompted to enter your password
+  as shown below:
 
-   ![Connecting to mongosh with no password](images/mongosh-connect-no-pass.png)
+  ![Connecting to mongosh with no password](images/mongosh-connect-no-pass.png)
 
 4. At the mongosh prompt, run the following command to list the available
-   databases on this cluster:
+  databases on this cluster:
 
-   ```
-   show dbs;
-   ```
+  ```js
+  show dbs;
+  ```
 
-   ![mongosh list of databases](images/mongosh-show-dbs.png)
+  ![mongosh list of databases](images/mongosh-show-dbs.png)
 
 When you are done, proceed to the next chapter.

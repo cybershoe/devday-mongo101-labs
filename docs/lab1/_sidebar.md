@@ -1,5 +1,5 @@
-# MongoDB 101
-### Developer Day Labs
+# MongoDB 101 {docsify-ignore}
+### Developer Day Labs {docsify-ignore}
 
 * [Home](/)
 * [Lab 1: Getting Connected](lab1/)
@@ -8,4 +8,4 @@
   * [Connecting with mongosh](lab1/lab1-3.md)
   * [Connecting with language-specific drivers (Python)](lab1/lab1-4.md)
   * [Conclusion](lab1/end.md)
-* [Lab 2: CRUD Operations](lab2/)
+* [Lab 2: Basic CRUD Operations](lab2/)

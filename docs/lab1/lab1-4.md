@@ -27,19 +27,21 @@ interact with include:
 1. On your jumphost, double-click the "VSCodium" icon on your desktop.
   ![Desktop showing the VSCodium Icon](images/vscodium-icon.png)
 
-  > 👆 **Note**: [VSCodium](https://vscodium.com/) is an open-source binary build
-    of [vscode](https://github.com/Microsoft/vscode).
+  > [!NOTE]
+  > [VSCodium](https://vscodium.com/) is an open-source binary build of [vscode](https://github.com/Microsoft/vscode).
 
-  > 👆 **Note**: VSCodium should automatically open to the lab folder. If it 
+  > [!NOTE] 
+  > VSCodium should automatically open to the lab folder. If it 
     doesn't, click "File -> Open Folder", browse to the `/home/ubuntu/lab`
     folder, and open it.
 
-  > 👆 **Note**: The first time you launch VSCodium, you will be asked if you
+  > [!NOTE] 
+  > The first time you launch VSCodium, you will be asked if you
     trust the authors of the `lab` directory. Click "Yes, I trust the authors"
     to continue.
     ![Folder trust dialog](images/codium-trust-authors.png)
 
-2. In the lab folder structre, open the file lab1-4/connect.py and read it.
+2. In the lab folder structre, open the file lab1-4/connect.py and examin the code.
   There are a few sections to the file:
 
   First we load the require modules, including the core MongoDB client class:
@@ -77,7 +79,7 @@ interact with include:
 3. After you have replaced the placeholder text with your Atlas connection
   string, save the file (Ctrl+S or File -> Save)
 
-4. Open a terminal (Ctrl+Shift+` or View -> Terminal), change to the lab1-4
+4. Open a terminal (`Ctrl+Shift+~` or View -> Terminal), change to the lab1-4
   directory, and run the `connect.py` program.
   ```bash
   cd ~/lab/lab1-4

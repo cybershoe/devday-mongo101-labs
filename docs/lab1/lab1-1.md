@@ -29,5 +29,6 @@ MongoDB Atlas lab cluster.
 
 ![Image of the contents of the connection string file](images/connection-string-file.png)
 
-> 👆 **Note**: Keep this string handy. It's for your own personal MongoDB Atlas
-> lab cluster, and you will be using it during the rest of the labs.
+  > [!NOTE] 
+  > Keep this string handy. It's for your own personal MongoDB Atlas
+  > lab cluster, and you will be using it during the rest of the labs.
