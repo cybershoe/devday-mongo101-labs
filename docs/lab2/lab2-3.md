@@ -150,22 +150,27 @@ Instead we can use the `update_one()` and `update_many()` methods. These behave 
 
 1. Open Compass and find the document in the `books` collection for The Great Gatsby. There is another error in this document: The Great Gatsby was released in 1925, not 1924.
 
-2. In VSCodium, open the `update_book.py` program and examine the code. Modify the `update` dict to update the docment for The Great Gatsby with the correct year.
-  <details>
-  <summary>Modified code</summary>
+2. In VSCodium, open the `update_book.py` program and examine the code.
 
-  ```
-  query = {
-    "title": "The Great Gatsby"
+### Update documents
+Update documents have a different format than replacement documents. The update document contains one or more [update operators](https://www.mongodb.com/docs/manual/reference/operator/update/), that describe how to modify the document or documents matching the query filter. The update document is a dict, where the keys are the operators to apply, and the values are nested dicts that tell the update operator what field(s) to operate on.
+
+3. To correct the record for The Great Gatsby, modify the `update` dict to include a key for the `$set` operator. The value for this key is another dict containing keys and values for fields to be updated, and their updated values, respectively.
+
+  ```python
+  update = {
+    "$inc": {
+      "published_year": 1
+    }
   }
   ```
 
   > [!TIP]
   > You can look at the record in Compass to find the name of the field you are replacing.
 
-3. Run `update_book.py`, and examine the results in Compass.
+4. Run `update_book.py`, and examine the results in Compass.
   ```bash
-  python upsert_book.py 
+  python update_book.py 
   ```
   <details>
   <summary>Expected results</summary>

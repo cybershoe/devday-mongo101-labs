@@ -16,7 +16,7 @@ update = {
    # put your update document here
 }
 
-response = collection.replace_one(query, update)
+response = collection.update_one(query, update)
 
 print(f"Acknowledged: {response.acknowledged}")
 print(f"Documents matched: {response.matched_count}")
