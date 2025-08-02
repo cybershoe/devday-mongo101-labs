@@ -150,4 +150,34 @@ Instead we can use the `update_one()` and `update_many()` methods. These behave 
 
 1. Open Compass and find the document in the `books` collection for The Great Gatsby. There is another error in this document: The Great Gatsby was released in 1925, not 1924.
 
-2. In VSCodium, open the `update_book.py` program and examine the code. 
+2. In VSCodium, open the `update_book.py` program and examine the code. Modify the `update` dict to update the docment for The Great Gatsby with the correct year.
+  <details>
+  <summary>Modified code</summary>
+
+  ```
+  query = {
+    "title": "The Great Gatsby"
+  }
+  ```
+
+  > [!TIP]
+  > You can look at the record in Compass to find the name of the field you are replacing.
+
+3. Run `update_book.py`, and examine the results in Compass.
+  ```bash
+  python upsert_book.py 
+  ```
+  <details>
+  <summary>Expected results</summary>
+  Because a document with `title` equal to `War and Peace` already exists, it is replaced by the new document. You can verify this in Compass.
+
+  ```bash
+  ubuntu@ip-10-0-1-219:~/lab/lab2-3$ python update_book.py
+  Acknowledged: True
+  Documents matched: 1
+  Documents modified: 1
+  ubuntu@ip-10-0-1-219:~/lab/lab2-3$
+  ```
+  </details>
+
+When you are done, proceed to the next lab.
