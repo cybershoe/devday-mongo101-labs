@@ -17,7 +17,26 @@ Read through the code of `find_one.py`. What do you expect to see on the console
   python find_one.py 
   ```
 
-3. You should see the same restaurant details that you saw in lab 1-4. Note that the document comes back as a Python dict, with arrays and embedded fields. It is not necessary to rehydrate the original object from multuple flat tables.
+3. Observe the output.
+  <details>
+  <summary>Expected results</summary>
+  
+  This is the same query you ran in 1-4, and you should see the document for the restaurant "Brunos On The Boulevard". Note that the document comes back as a Python dict, with arrays and embedded fields. It is not necessary to rehydrate the original object from multuple flat tables.
+
+  ```bash
+  ubuntu@ip-10-0-1-219:~/lab/lab2-2$ python exclude_fields.py 
+  {'_id': ObjectId('5eb3d668b31de5d588f42930'),
+  'address': {'building': '8825',
+              'coord': [-73.8803827, 40.7643124],
+              'street': 'Astoria Boulevard',
+              'zipcode': '11369'},
+  'borough': 'Queens',
+  'cuisine': 'American',
+  'name': 'Brunos On The Boulevard',
+  'restaurant_id': '40356151'}
+  ubuntu@ip-10-0-1-219:~/lab/lab2-2$
+```
+
 
 4. 🎓 *Extra Credit*: Modify the code to find the restaurant named "Blue Bay Restaurant".
   <details>
@@ -48,7 +67,7 @@ Much like `insert_one()`&mdash;which takes a single document&mdash;has its count
 3. Observe the output:
   <details>
   <summary>Expected results</summary>
-  
+
   `find()` will return a cursor to a set of all records where the `cuisine` field is equal to `Soups`. The `for:` loop will iterate over this cursor, and for each document returned, it will print out the `name` field of that record to the console.
   
   ```bash
