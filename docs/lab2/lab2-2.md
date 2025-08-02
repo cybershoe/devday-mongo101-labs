@@ -21,7 +21,7 @@ Read through the code of `find_one.py`. What do you expect to see on the console
   <details>
   <summary>Expected results</summary>
   
-  This is the same query you ran in 1-4, and you should see the document for the restaurant "Brunos On The Boulevard". Note that the document comes back as a Python dict, with arrays and embedded fields. It is not necessary to rehydrate the original object from multuple flat tables.
+  This is the same query you ran in 1-4, and you should see the document for the restaurant "Brunos On The Boulevard". Note that the document comes back as a Python dict, with arrays and embedded fields. It is not necessary to rehydrate the original object from multiple flat tables.
 
   ```bash
   ubuntu@ip-10-0-1-219:~/lab/lab2-2$ python exclude_fields.py 

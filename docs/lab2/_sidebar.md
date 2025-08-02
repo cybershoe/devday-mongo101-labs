@@ -6,6 +6,7 @@
 * [Lab 2: Basic CRUD Operations](lab2/)
   * [Creating Documents](lab2/lab2-1.md)
   * [Retrieving Documents](lab2/lab2-2.md)
-* [Lab 3: Indexes](lab3)
+  * [Updating Documents](lab2/lab2-3.md)
+* [Lab 3: Indexes](lab3/)
 * [Lab 4: More Advanced Queries](lab4/)
 * [Lab 5: Aggregations](lab5/)
