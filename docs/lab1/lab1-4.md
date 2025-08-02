@@ -77,9 +77,9 @@ interact with include:
   ```
 
 3. After you have replaced the placeholder text with your Atlas connection
-  string, save the file (Ctrl+S or File -> Save)
+  string, save the file (<kbd>Ctrl</kbd>+<kbd>S</kbd> or File -> Save)
 
-4. Open a terminal (`Ctrl+Shift+~` or View -> Terminal), change to the lab1-4
+4. Open a terminal (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>\`</kbd> or View -> Terminal), change to the lab1-4
   directory, and run the `connect.py` program.
   ```bash
   cd ~/lab/lab1-4

@@ -23,7 +23,7 @@ To see what *not* to do, let's try just repeating the same insert with the updat
   cp insert_book.py insert_book_again.py
   ```
 
-6. Open `insert_book_again.py`, and correct the `book` object to show the proper author's first name, F. Scott. Save the file, either by pressing `Ctrl+S` or navigating to File -> Save.
+6. Open `insert_book_again.py`, and correct the `book` object to show the proper author's first name, F. Scott. Save the file, either by pressing <kbd>Ctrl</kbd>+<kbd>S</kbd> or navigating to File -> Save.
 
 7. Run the `insert_book_again.py` program and note the output. You should get a different ObjectID.
 
@@ -48,6 +48,48 @@ As you saw, re-running the insert simply created a new document. To replace an e
 
 2. Open the `replace_book.py` program, and look at the code. You'll see that the `collection.insert_one()` instruction has been replaced by `collection.replace_one`. 
 
-3. Replace the `"your object _id here"` string literal with the object `_id` from `insert_book.py`.
+3. Replace the `"your object _id here"` string literal with the object `_id` from `insert_book.py` and save the file.
+  > [!TIP]
+  > Remember, to copy from the terminal, the key combination is <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>, to paste into VSCodium is <kbd>Ctrl</kbd>+<kbd>V</kbd>, and to save the file is <kbd>Ctrl</kbd>+<kbd>S</kbd>
+
+  > [!NOTE]
+  > We're using the `_id` of the document as the filter condition because it is guaranteed to be unique. We don't need to do this, you can use any query filter that will return the correct record; however, since `replace_one()` only replaces one document, even if more than one match the query filter, using a unique key ensures that we replace the document that we intend to.
 
 4. Run `replace_book.py` and observe the output.
+  <details>
+  <summary>Expected results</summary>
+
+  `replace_one()` returns an object with, amongst other properties, the write acknowledgement, the number of documents that matched the query filter, and the number of documents modified by the operation.
+
+  ```bash
+  ubuntu@ip-10-0-1-219:~/lab/lab2-3$ python replace_book.py 
+  Acknowledged: True
+  Documents matched: 1
+  Documents modified: 1
+  ubuntu@ip-10-0-1-219:~/lab/lab2-3$
+  ```
+  </details>
+
+5. Look at your collection in Compass: note that the document has been updated in place, and it still has the same `_id`.
+
+## Upserts
+
+What if you want only one instance of a document in your collection, but you don't know whether it already exists? The `upsert` argument to `replace_one()` instructs MongoDB to perform an upsert: if a document matching the query filter exists, it is updated in place; if it doesn't exist, it is created with the contents of the replacement document.
+
+1. Open the `upsert_book.py` program and examine the code. What do you expect to happen when this program is run for the first time?
+
+2. Run `upsert_book.py` and observe the output.
+
+<details>
+  <summary>Expected results</summary>
+
+  `replace_one()` returns an object with, amongst other properties, the write acknowledgement, the number of documents that matched the query filter, and the number of documents modified by the operation.
+
+  ```bash
+  ubuntu@ip-10-0-1-219:~/lab/lab2-3$ python replace_book.py 
+  Acknowledged: True
+  Documents matched: 1
+  Documents modified: 1
+  ubuntu@ip-10-0-1-219:~/lab/lab2-3$
+  ```
+  </details>

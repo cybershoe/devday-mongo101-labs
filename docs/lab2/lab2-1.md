@@ -60,7 +60,7 @@ The flexibility of the document model makes inserting data into MongoDB extremel
   python insert_one.py
   ```
   > [!TIP]
-  > If you closed the terminal, press `Ctrl+Shift+~` to re-launch it.
+  > If you closed the terminal, press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>\`</kbd> to re-launch it.
 
 6. The `insert_one()` method returs a result object with an `acknowledged` and an `inserted_id` attribute. You should see confirmation in the terminal that the document was created. 
   ![Image of the output of the insert_one.py program](images/insert_one_acknowledged.png)
@@ -69,7 +69,7 @@ The flexibility of the document model makes inserting data into MongoDB extremel
 
 7. Expand the `lab2_db` database and select the `people` collection. Observe that your document has been committed to the database.
   > [!TIP]
-  > You might need to refresh the Compass window to see the new database, collection, and document; use `Ctrl+R` or View -> Reload.
+  > You might need to refresh the Compass window to see the new database, collection, and document; use <kbd>Ctrl</kbd>+<kbd>R</kbd> or View -> Reload.
 
   ![Image of compass containing the newly-created database and record](images/inserted_one_document.png)
 

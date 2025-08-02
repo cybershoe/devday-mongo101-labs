@@ -22,7 +22,7 @@ Compass, but in a command-line interface.
   ```
 
   > [!TIP]
-  > In the terminal you need to use `Shift+Ctrl+C` and `Shift+Ctrl+V` to copy and paste, respectively.
+  > In the terminal you need to use <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> and <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> to copy and paste, respectively.
 
   > [!NOTE] 
   > If you accidentally include the newline at the end of your
@@ -44,7 +44,7 @@ Compass, but in a command-line interface.
 3. As noted, it's generally not good practice to include passwords in your
   command history. Let's try again, but this time we'll prompt for a password.
 
-  Enter `Ctrl+D` to exit mongosh. Press the up arrow to bring up the last
+  Enter <kbd>Ctrl</kbd>+<kbd>D</kbd> to exit mongosh. Press the up arrow to bring up the last
   command entered, and go back and remove your password from the connection
   string on the command line.
 

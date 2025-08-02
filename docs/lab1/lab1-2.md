@@ -21,8 +21,8 @@ jumphost.
 and paste it into the `URI` field in the New Connection dialog box.
   > [!TIP] 
   > The jumphost is running Ubuntu Linux with the Xfce dekstop
-  > environment. If you are using a Mac, you'll need to use ^&nbsp;C and
-  > ^&nbsp;V instead of ⌘&nbsp;C and ⌘&nbsp;V to copy and paste, respectively.
+  > environment. If you are using a Mac, you'll need to use <kbd>Ctrl</kbd>+<kbd>C</kbd> and
+  > <kbd>Ctrl</kbd>+<kbd>V</kbd> instead of <kbd>⌘</kbd>+<kbd>C</kbd> and <kbd>⌘</kbd>+<kbd>V</kbd> to copy and paste, respectively.
 4. Click "Save and Connect"
 
 ![Image of the New Connection dialog box](images/compass-enter-connection-string.png)
