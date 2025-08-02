@@ -155,7 +155,7 @@ Instead we can use the `update_one()` and `update_many()` methods. These behave 
 ### Update documents
 Update documents have a different format than replacement documents. The update document contains one or more [update operators](https://www.mongodb.com/docs/manual/reference/operator/update/), that describe how to modify the document or documents matching the query filter. The update document is a dict, where the keys are the operators to apply, and the values are nested dicts that tell the update operator what field(s) to operate on.
 
-3. To correct the record for The Great Gatsby, modify the `update` dict to include a key for the `$set` operator. The value for this key is another dict containing keys and values for fields to be updated, and their updated values, respectively.
+3. To correct the record for The Great Gatsby, modify the `update` dict to include the `$inc` operator. The value for this key is another dict containing describing the field to be incremented, and the amount by which to increment that field.
 
   ```python
   update = {
@@ -165,16 +165,13 @@ Update documents have a different format than replacement documents. The update 
   }
   ```
 
-  > [!TIP]
-  > You can look at the record in Compass to find the name of the field you are replacing.
-
 4. Run `update_book.py`, and examine the results in Compass.
-  ```bash
+    ```bash
   python update_book.py 
-  ```
+    ```
   <details>
   <summary>Expected results</summary>
-  Because a document with `title` equal to `War and Peace` already exists, it is replaced by the new document. You can verify this in Compass.
+  The `update_one()` method will find the record fo The Great Gatsby, and increment the value of the `published_year` field to the correct value of 1925.
 
   ```bash
   ubuntu@ip-10-0-1-219:~/lab/lab2-3$ python update_book.py
@@ -184,5 +181,8 @@ Update documents have a different format than replacement documents. The update 
   ubuntu@ip-10-0-1-219:~/lab/lab2-3$
   ```
   </details>
+
+  > [!NOTE]
+  > `$inc` is not an idempotent operation. If we re-run `update_book.py` (feel free to try), the year will continue to increment. In the real world, we would likely use the `$set` operator instead, which sets a field or fields to a specific value. 
 
 When you are done, proceed to the next lab.
