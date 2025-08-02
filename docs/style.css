@@ -1,0 +1,4 @@
+.markdown-section ol li::marker {
+    font-size: larger;
+    font-weight: bolder;
+}

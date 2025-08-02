@@ -11,9 +11,7 @@ The flexibility of the document model makes inserting data into MongoDB extremel
   > [!NOTE]
   > Refer to labs [1-2](lab1/lab1-2.md) and [1-4](lab1/lab1-4.md) for help getting started with Compass and VSCodium, if you haven't already.
 
-2. In VSCodium, open the file lab2-1/insert_one.py and examine the code. 
-
-  Note the `person` dict. There is no predefined schema that this object is adhering to.
+2. In VSCodium, open the file lab2-1/insert_one.py and examine the code. Note the `person` dict: there is no predefined schema that this object is adhering to.
 
   ```python
   fred = {
@@ -49,6 +47,9 @@ The flexibility of the document model makes inserting data into MongoDB extremel
 
 4. Back in VSCodium, look at the `collection.insert_one()` instruction. Note that there is no mapping of the object's properties to fixed columns; the document will be the whole object.
 
+  > [!NOTE]
+  > These labs are primarily written in Python, due to its popularity and readability. The methods we will be using are not unique to the Python driver, but they may be named differently in different languages to match the naming conventions of those languages. For example, the `.insert_one()` method in PyMongo is analagous to the `.insertOne()` method in mongosh/JavasScript, or the `.InsertOne()` method in .NET/C#.
+
 5. In the terminal window, change to the lab2-1 directory, and run the `insert_one.py` program.
   ```bash
   cd ~/lab/lab2-1
@@ -60,7 +61,7 @@ The flexibility of the document model makes inserting data into MongoDB extremel
 6. The `insert_one()` method returs a result object with an `acknowledged` and an `inserted_id` attribute. You should see confirmation in the terminal that the document was created. 
   ![Image of the output of the insert_one.py program](images/insert_one_acknowledged.png)
 
-Switch back to Compass and see that the database and collection have been created.
+  Switch back to Compass and see that the database and collection have been created.
 
 7. Expand the `lab2_db` database and select the `people` collection. Observe that your document has been committed to the database.
   > [!TIP]
@@ -80,7 +81,7 @@ While the `.insert_one()` method takes a single object, the `.insert_many()` met
 
 3. 🎓*Extra Credit*: Add another object to the list for another member of the household.
 
-4. In the terminal, run the `insert_many.py` program. Note the output of the program; whereas `insert_one()` returns a result with an `inserted_id` attribute containing a single ObjectID, `insert_many()`'s return object contains and `inserted_ids()` attribute, which is a list of ObjectIDs for each inserted document.
+4. In the terminal, run the `insert_many.py` program. Note the output of the program; whereas `insert_one()` returns a result with an `inserted_id` attribute containing a single ObjectID, `insert_many()`'s return object contains an `inserted_ids()` attribute, which is a list of ObjectIDs for each inserted document.
 
 5. Check in Compass to see that the new documents have been created. Notice that even in the database, the schema is flexible; some documents contain arrays with more or fewer items, and some documents have different poperties.
   ![Image of compass containing the added documents](images/inserted_many_documents.png)
