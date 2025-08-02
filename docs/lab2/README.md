@@ -7,3 +7,4 @@ Now you've connected to your cluster, let's start working with documents. In the
 
 > [!NOTE]
 > You can complete most of this lab by copying and pasting commands and running the pre-written code in the lab folder; however, there are some steps marked as 🎓 *Extra Credit*. These are an opportunity to make changes to the code and see how those changes affect the results. Don't be afriad to experiment; you can always run the `reset.py` program to remove any changes from the database.
+

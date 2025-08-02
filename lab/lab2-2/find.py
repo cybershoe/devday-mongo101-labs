@@ -8,7 +8,7 @@ client = MongoClient(MONGO_URI)
 db = client["sample_restaurants"]
 collection = db["restaurants"]
 
-response = collection.find({"cuisine": "soup"})
+response = collection.find({"cuisine": "Soups"})
 
 for doc in response:
-    pprint(doc)
+    pprint(doc['name'])

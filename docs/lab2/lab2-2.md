@@ -28,31 +28,39 @@ Read through the code of `find_one.py`. What do you expect to see on the console
   ```
   </details>
 
-## Projections
-
-Notice that we included a [projection](https://www.mongodb.com/docs/manual/tutorial/project-fields-from-query-results/) argument in the `find_one()` instruction above. Projections restrict the fields returned in a query to only include relevant information. The projection argument is a document (e.g.: dict), where the keys correspond to fields to either include or exclude from the results. 
-
-### Inclusion
-You can return only specific fields by giving the fields you want to include a value of "1" in the projection document. For example, to include only the object ID, name and address in a response, your projection document would be:
-```python
-{"name": 1, "address": 1}
-```
-> [!NOTE]
-> The `_id` field is always included, unless explicitly excluded.
-
-### Exclusion
-You can retun all fields except for specific ones by giving the fields you want to exclude a value of "0" in the projection response. For example, to return all fields except for inspection grades, your projection document would be:
-```python
-{"grades": 0}
-```
-
-> [!NOTE]
-> With the exception of excluding the `_id` field, you cannot combine inclusion and exclusion statements in projection documents.
-
-1. In VSCodium, open the file lab2-2/include_fields.py and examine the code. 
-
 ## Retrieving multiple documents
 
 Much like `insert_one()`&mdash;which takes a single document&mdash;has its counterpart `insert_many()` that takes a list of document, `find_one()` also has a counterpart, `find()`, which returns a [cursor](https://www.mongodb.com/docs/manual/core/cursors/) instead of a single record. A cursor is an iterable object that allows you to process query results sequentially or in batches.
 
-1. In VSCodium, open the file lab2-2/find.py and examine the code. 
+1. In VSCodium, open the file lab2-2/find.py and examine the code. Notice how this find operation looks a bit different than previous operations. Instead of simply outputting the response, we have this code:
+  ```python
+  for doc in response:
+      pprint(doc['name'])
+  ```
+  What do you think the output of this program will be?
+
+2. In the terminal window, change to the lab2-2 directory, and run the `find_one.py` program.
+  ```bash
+  cd ~/lab/lab2-2
+  python find.py 
+  ```
+
+3. Observe the output:
+  <details>
+  <summary>Expected results</summary>
+  
+  `find()` will return a cursor to a set of all records where the `cuisine` field is equal to `Soups`. The `for:` loop will iterate over this cursor, and for each document returned, it will print out the `name` field of that record to the console.
+  
+  ```bash
+  ubuntu@ip-10-0-1-219:~/lab/lab2-2$ python find.py
+  'Wichcraft Express'
+  'Original Soupman Of Staten Island'
+  'The Original Soupman'
+  'Peasant Stock'
+  ubuntu@ip-10-0-1-219:~/lab/lab2-2$
+  ```
+  </details>
+
+  4. 🎓 *Extra Credit*: Modify find.py to return a different type of cuisine. You can explore the collection in Compass to find other values that exist in the database. What do you think would happen if you specified a non-existent cuisine? What about lowercase `soups`?
+
+When you are done, proceed to the next lab.
