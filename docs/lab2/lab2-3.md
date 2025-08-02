@@ -83,13 +83,13 @@ What if you want only one instance of a document in your collection, but you don
 <details>
   <summary>Expected results</summary>
 
-  `replace_one()` returns an object with, amongst other properties, the write acknowledgement, the number of documents that matched the query filter, and the number of documents modified by the operation.
+  Because `replace_one()` is looking for a document where `title` is equal to `"War and Peace"`. and no such document exists, it does not modify the collection.
 
   ```bash
   ubuntu@ip-10-0-1-219:~/lab/lab2-3$ python replace_book.py 
   Acknowledged: True
-  Documents matched: 1
-  Documents modified: 1
+  Documents matched: 0
+  Documents modified: 0
   ubuntu@ip-10-0-1-219:~/lab/lab2-3$
   ```
   </details>

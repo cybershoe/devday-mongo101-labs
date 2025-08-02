@@ -22,3 +22,5 @@ response = collection.replace_one({"title": book['title']}, book)
 print(f"Acknowledged: {response.acknowledged}")
 print(f"Documents matched: {response.matched_count}")
 print(f"Documents modified: {response.modified_count}")
+if response.did_upsert:
+    print(f"Upserted document: {response.upserted_id}")
