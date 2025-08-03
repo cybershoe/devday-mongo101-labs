@@ -1,0 +1,5 @@
+# Indexes
+
+Indexes are an important part of building efficient and performant databases in MongoDB. In MongoDB, form follows funcion: the shape of the database will depend on how it will be used, and the indexing strategy should supoort the most common expected query patterns to maximize performance. Finding individual documents or ranges of contiguous documents in an index is fast and efficient; inspecting every document in a collecton to match a query is expensive. Returning documents in the order in which they are indexed is fast; performing an in-memory sort of a large number of documents is expensive. Crafting indexes that maximize the effiiency of the most common queries is part of the art of a well-designed MongoDB database.
+
+In this lab, we will briefly explore creating and using indexes in MongoDB, and will show how to evaluate index usage with the `explain()` command.

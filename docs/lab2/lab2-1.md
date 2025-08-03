@@ -51,9 +51,6 @@ The flexibility of the document model makes inserting data into MongoDB extremel
 
 4. Back in VSCodium, look at the `collection.insert_one()` instruction. This is a collection method, and it takes the object to insert as its first argument. Note that there is no mapping of the object's properties to fixed columns; the document will be the whole object.
 
-  > [!NOTE]
-  > These labs are primarily written in Python, due to its popularity and readability. The methods we will be using are not unique to the Python driver, but they may be named differently in different languages to match the naming conventions of those languages. For example, the `.insert_one()` method in PyMongo is analagous to the `.insertOne()` method in mongosh/JavasScript, or the `.InsertOne()` method in .NET/C#.
-
 5. In the terminal window, change to the lab2-1 directory, and run the `insert_one.py` program.
   ```bash
   cd ~/lab/lab2-1

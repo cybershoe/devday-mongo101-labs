@@ -11,8 +11,8 @@ different language (i.e.: SQL) to describe database operations.
 
 ## The Python driver
 The official MongoDB Python driver is called 
-[PyMongo](https://www.mongodb.com/docs/languages/python/). You may have heard
-of another driver, motor, used for async Python. Motor is now deprecated in
+[PyMongo](https://www.mongodb.com/docs/languages/python/). You may have also heard
+of another driver, Motor, used for async Python. Motor is now deprecated in
 favour of the PyMongo Async API now included in PyMongo. Some classes you will
 interact with include:
 
