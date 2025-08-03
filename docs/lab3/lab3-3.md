@@ -21,5 +21,48 @@ Consider the `restaurant` collection: the `address` field is an embedded documen
   <details>
   <summary>Hint</summary>
 
-  `zipcode` is a field in the `address` embedded document, so you can refer to that field directly as `"address.zipcode"`.
+  ```python
+  response = collection.find({"address.zipcode": "11371"})
+  ```
   </details>
+
+2. Run `embedded.py` and check your results.
+
+  <details>
+  <summary>Expected result</summary>
+  
+  ```bash
+  ubuntu@ip-10-0-1-116:~/lab/lab3-2$ python multi-predicate.py 
+  'Gyro King'
+  'Christos Gyro & Souvlaki'
+  'Greek Express'
+  'Gold Mine Cafe'
+  ubuntu@ip-10-0-1-116:~/lab/lab3-2$ cd ..
+  ubuntu@ip-10-0-1-116:~/lab$ cd lab3-3
+  ubuntu@ip-10-0-1-116:~/lab/lab3-3$ python embedded.py 
+  'Terminal Cafe/Yankee Clipper'
+  'Yankee Clipper'
+  'Samuel Adams'
+  'Go Natural'
+  "Dunkin' Donuts"
+  "Dunkin' Donuts, Baskin Robbins"
+  'Figs'
+  "Auntie Anne'S Pretzels"
+  "Auntie Anne'S Pretzels"
+  'Five Guys Burgers And Fries'
+  'Maple Leaf Lounge'
+  'Fix Coffee & Bakery'
+  'Empire Tavern'
+  'Cotto Market-Gate C30'
+  'Cibo Express-Main'
+  'Us Airways Club'
+  'Voyage'
+  'Villa Italian Kitchen'
+  "Harry'S Deli"
+  'Wibar'
+  'Piccolo  Mercato'
+  ubuntu@ip-10-0-1-116:~/lab/lab3-3$ 
+  ```
+  </details>
+
+  🎓 *Extra Credit*: Looking at the results, can you guess where zip code 11371 is? Modify `embedded.py` to find a hamburger while waiting for your flight and check your results.
