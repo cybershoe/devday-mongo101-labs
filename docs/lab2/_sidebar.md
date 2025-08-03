@@ -7,6 +7,8 @@
   * [Creating Documents](lab2/lab2-1.md)
   * [Retrieving Documents](lab2/lab2-2.md)
   * [Updating Documents](lab2/lab2-3.md)
+  * [Deleting Documents](lab2/lab2-4.md)
+  * [Conclusion](lab2/end.md)
 * [Lab 3: Indexes](lab3/)
 * [Lab 4: More Advanced Queries](lab4/)
 * [Lab 5: Aggregations](lab5/)
