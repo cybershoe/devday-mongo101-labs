@@ -13,16 +13,18 @@ Consider the `restaurant` collection: the `address` field is an embedded documen
 `zipcode` is a field in the `address` embedded document, so you can refer to that field directly as `"address.zipcode"`.
 </details>
 
-1. Open the file lab3-3/embedded.py. Modify the empty `find()` instruction with a query that will return all restaurants in the 11371 zip code.
+1. Open Compass and navigate to the `restaurants` collection in the `sample_restaurants` database, if you haven't already done so.
+
+2. Create a query that will return all restaurants in the 11371 zip code. Run the query and check your results.
 
   > [!TIP]
-  > Remember that the `address.zipcode` field is a string field, even though it only contains numeric characters.
+  > Remember your quotes! The field name is in dot notation, and the `address.zipcode` field is a string field, even though it only contains numeric characters. Both the key and value need to be quoted.
 
   <details>
   <summary>Hint</summary>
 
-  ```python
-  response = collection.find({"address.zipcode": "11371"})
+  ```js
+  {"address.zipcode": "11371"}
   ```
   </details>
 
@@ -31,38 +33,202 @@ Consider the `restaurant` collection: the `address` field is an embedded documen
   <details>
   <summary>Expected result</summary>
   
-  ```bash
-  ubuntu@ip-10-0-1-116:~/lab/lab3-2$ python multi-predicate.py 
-  'Gyro King'
-  'Christos Gyro & Souvlaki'
-  'Greek Express'
-  'Gold Mine Cafe'
-  ubuntu@ip-10-0-1-116:~/lab/lab3-2$ cd ..
-  ubuntu@ip-10-0-1-116:~/lab$ cd lab3-3
-  ubuntu@ip-10-0-1-116:~/lab/lab3-3$ python embedded.py 
-  'Terminal Cafe/Yankee Clipper'
-  'Yankee Clipper'
-  'Samuel Adams'
-  'Go Natural'
-  "Dunkin' Donuts"
-  "Dunkin' Donuts, Baskin Robbins"
-  'Figs'
-  "Auntie Anne'S Pretzels"
-  "Auntie Anne'S Pretzels"
-  'Five Guys Burgers And Fries'
-  'Maple Leaf Lounge'
-  'Fix Coffee & Bakery'
-  'Empire Tavern'
-  'Cotto Market-Gate C30'
-  'Cibo Express-Main'
-  'Us Airways Club'
-  'Voyage'
-  'Villa Italian Kitchen'
-  "Harry'S Deli"
-  'Wibar'
-  'Piccolo  Mercato'
-  ubuntu@ip-10-0-1-116:~/lab/lab3-3$ 
+  21 documents:
+  ```js
+  [
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "American",
+      "grades": [...],
+      "name": "Terminal Cafe/Yankee Clipper",
+      "restaurant_id": "40364262"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "American",
+      "grades": [...],
+      "name": "Yankee Clipper",
+      "restaurant_id": "40379994"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "Bottled beverages, including water, sodas, juices, etc.",
+      "grades": [...],
+      "name": "Samuel Adams",
+      "restaurant_id": "41117836"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "Sandwiches",
+      "grades": [...],
+      "name": "Go Natural",
+      "restaurant_id": "41117842"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "Donuts",
+      "grades": [...],
+      "name": "Dunkin' Donuts",
+      "restaurant_id": "41142675"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "Donuts",
+      "grades": [...],
+      "name": "Dunkin' Donuts, Baskin Robbins",
+      "restaurant_id": "41142665"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "American",
+      "grades": [...],
+      "name": "Figs",
+      "restaurant_id": "41187508"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "Bagels/Pretzels",
+      "grades": [...],
+      "name": "Auntie Anne'S Pretzels",
+      "restaurant_id": "41235116"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "Bagels/Pretzels",
+      "grades": [...],
+      "name": "Auntie Anne'S Pretzels",
+      "restaurant_id": "41235119"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "Hamburgers",
+      "grades": [...],
+      "name": "Five Guys Burgers And Fries",
+      "restaurant_id": "41481310"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "American",
+      "grades": [...],
+      "name": "Maple Leaf Lounge",
+      "restaurant_id": "41619912"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "Café/Coffee/Tea",
+      "grades": [...],
+      "name": "Fix Coffee & Bakery",
+      "restaurant_id": "41645303"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "American",
+      "grades": [...],
+      "name": "Empire Tavern",
+      "restaurant_id": "41693597"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "Bakery",
+      "grades": [...],
+      "name": "Cotto Market-Gate C30",
+      "restaurant_id": "41693601"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "American",
+      "grades": [...],
+      "name": "Cibo Express-Main",
+      "restaurant_id": "41693614"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "American",
+      "grades": [...],
+      "name": "Us Airways Club",
+      "restaurant_id": "41721588"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "American",
+      "grades": [...],
+      "name": "Voyage",
+      "restaurant_id": "50003888"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "Italian",
+      "grades": [...],
+      "name": "Villa Italian Kitchen",
+      "restaurant_id": "50014290"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "Jewish/Kosher",
+      "grades": [...],
+      "name": "Harry'S Deli",
+      "restaurant_id": "50017147"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "Other",
+      "grades": [...],
+      "name": "Wibar",
+      "restaurant_id": "50016849"
+    },
+    {
+      "_id": {...},
+      "address": {...},
+      "borough": "Queens",
+      "cuisine": "Other",
+      "grades": [...],
+      "name": "Piccolo  Mercato",
+      "restaurant_id": "50018798"
+    },
+  ]
   ```
   </details>
 
   🎓 *Extra Credit*: Looking at the results, can you guess where zip code 11371 is? Modify `embedded.py` to find a hamburger while waiting for your flight and check your results.
+
+When you are done, proceed to the next lab.
