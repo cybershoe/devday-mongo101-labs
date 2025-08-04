@@ -120,3 +120,57 @@ You can combine array query syntax with dot notation to match on fields inside o
   "Crown Fried Chicken And Pizza"
   "George And Jacks"
   ```
+  </details>
+
+## Matching multiple criteria in an array
+
+So far we have been matching only on individual criteria. How could we search for array elements that match multiple criteria? Imagine we want to find restaurants that were inspected on January 17, 2015, but only if they had a grade of "A" How about this query?
+
+```js
+{
+  "grades.date": ISODate('2015-01-17'),
+  "grades.grade": "A"
+}
+```
+That might look correct, but consider what it's actually asking: find documents where a document in the `grades` array has a `date` value of `ISODate('2015-01-17')`, and also where a document in the `grades` array has a `grade` value of `"A"`. They don't have to be the same document. This query would return any restaurant that was inspected on January 17th so long as they *ever* received an "A" grade, not necessarily on the 17th.
+
+To solve for this scenario, we can use the `$elemMatch` query operator. We'll get more into operators in the next module. `$elemMatch` operates against an array, and takes a document of query filter criteria. It returns true if element of the array matches that query filter.
+
+1. In the `restaurants` collection, run the following query and check your results:
+
+  ```js
+  { 
+    grades: {
+      $elemMatch:{
+        date: ISODate('2015-01-17'),
+        grade: "A"
+      }
+    }
+  }
+  ```
+  > [!NOTE]
+  > This query has been indented across multiple lines to make the structure more clear. The query is searching against the `grades` field, but instead of a value to match against, we pass a document with key value pairs of query operators and their arguments. The operator `$elemMatch` takes another document as its value, containing the filter criteria to apply against each array element.
+
+
+  <details>
+  <summary>Expected results</summary>
+
+  The query should return only the 12 restaurants that received an "A" grade on January 17, 2015:
+  
+  ```
+  "Cafe Un Deux Trois"
+  "Trattoria Alba"
+  "Mcdonald'S"
+  "Albion"
+  "Il Sapore Italiano Pizzeria"
+  "Sweet Afton"
+  "Dunkin Donuts"
+  "Little Caesars"
+  "Little Italy Pizza/Papaya Dog"
+  "Peachwave"
+  "New Giant Chinese Food"
+  "George And Jacks"
+  ```
+  </details>
+
+When you are done, proceed to the next lab.
