@@ -30,3 +30,6 @@ result = collection.find(
   sort=sort,
   limit=limit
 )
+
+for doc in result:
+    pprint(doc)
