@@ -7,13 +7,20 @@ MongoDB is a document database. Unlike SQL databases, where one-to-one relations
 
 Consider the `restaurant` collection: the `address` field is an embedded document, which contains multiple fields representing the restaurant's address. How could we find all restaurants in a particular zip code?
 
-<details>
-<summary>Hint</summary>
-
-`zipcode` is a field in the `address` embedded document, so you can refer to that field directly as `"address.zipcode"`.
-</details>
-
 1. Open Compass and navigate to the `restaurants` collection in the `sample_restaurants` database, if you haven't already done so.
+
+2. Consider this query: 
+  ```js
+  {address: {zipcode: "11371"}}
+  ```
+
+  What do you expect to happen when you run this query? Run it and see whether it returns the results you expect.
+
+  <details>
+  <summary>Expected results</summary>
+  
+  The query returns no results. Try to break down the query the way MongoDB would. You are asking it to return all documents where the `address` field is *exactly equal* to the value `{zipcode: "11371"}`, but there are no document that match that condition; the embedded documents in thier `address` fields all have other values besides just `zipcode`. Instead of searching for a match on the field `address`, we need to ask MongoDB to search for a match on a the field `zipcode` *inside* a field called `address`.
+  </details>
 
 2. Create a query that will return all restaurants in the 11371 zip code. Run the query and check your results.
 
@@ -23,12 +30,12 @@ Consider the `restaurant` collection: the `address` field is an embedded documen
   <details>
   <summary>Hint</summary>
 
+  `zipcode` is a field inside the embedded document `address`. You can refer to it using dot notation as `"address.zipcode"`.
+
   ```js
   {"address.zipcode": "11371"}
   ```
   </details>
-
-2. Run `embedded.py` and check your results.
 
   <details>
   <summary>Expected result</summary>
