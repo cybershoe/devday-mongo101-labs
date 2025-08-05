@@ -13,3 +13,4 @@
   * [Sorting, limiting, and counting](lab3/lab3-6)
 * [Lab 4: Aggregations](lab4/)
 * [Lab 5: Indexes](lab5/)
+* [Conclusion](end)

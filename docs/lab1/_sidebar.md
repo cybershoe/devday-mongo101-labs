@@ -12,3 +12,4 @@
 * [Lab 3: More Advanced Queries](lab3/)
 * [Lab 4: Aggregations](lab4/)
 * [Lab 5: Indexes](lab5/)
+* [Conclusion](end)

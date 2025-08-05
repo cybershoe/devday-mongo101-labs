@@ -80,12 +80,72 @@ In `mongosh`, the 3rd positional argument to the `db.collection.find()` method i
   Atlas atlas-fn0rd-shard-0 [primary] sample_mflix> 
   ```
 
-## PyMongo
+### Compass
 
-PyMongo takes the same options, but because Python supports named arguments, it doesn't use the options document. 
+Compass also allows you to provide additional options to sort and limit your queries.
+
+1. In Compass, navigate to the `movies` collection in the `sample_mflix` database.
+
+2. Populate the query field with the query from the mongosh exercise.
+
+3. Click "Options ▼", and populate the projection, sort, and limit fields with the values from the mongosh exercise.
+  ![Compass showing the sort and limit options](images/compass-sort.png)
+
+4. Run the query and check your results.
+
+### PyMongo
+
+PyMongo takes the same options as `mongosh`, but because Python supports named arguments, it doesn't use the options document. 
 
 1. In VSCodium, change to the lab3-6 folder and open `find_movies.py`. Examine the code, run it, and check your results.
 
-  > ![NOTE]
+  > [!NOTE]
   > This code does the same thing as the `mongosh` command above, but notice that instead of a options document, we're supplying the sort and limit options as keyword parameters to the `.find()` method. Also note that filters, projections, and other options are just regular Python variables. You can programmatically compose a query without additional string manipulation to convert it into a SQL statement.
 
+  <details>
+  <summary>Expected results</summary>
+
+  ```python
+  {'_id': ObjectId('573a13f0f29313caabdd969c'),
+  'released': datetime.datetime(2016, 1, 15, 0, 0),
+  'title': 'Remember'}
+  {'_id': ObjectId('573a13ebf29313caabdd0792'),
+  'released': datetime.datetime(2015, 11, 4, 0, 0),
+  'title': 'April and the Extraordinary World'}
+  {'_id': ObjectId('573a13ddf29313caabdb49d3'),
+  'released': datetime.datetime(2015, 11, 1, 0, 0),
+  'title': 'I Am Thor'}
+  ```
+
+## Counting documents
+
+When you only need to know how many documents match a query, and don't need the actual contents, `mongosh` and the language-specific drivers provide a `collection.countDocuments()` method. This method takes a query filter, and returns the number of documents that match that filter.
+
+1. Open a command terminal (or use the integrated one in VSCodium), and launch mongosh, if it isn't already open.
+
+2. Switch to the `sample_restaurants` database.
+  <details>
+  <summary>Hint</summary>
+
+  ```js
+  use sample_restaurants;
+  ```
+  </details>
+
+3. Use the `countDocuments()`; command to find how many Italian restaurants are in Queens.
+  > [!TIP]
+  > `countDocuments()` takes a query filter document as its first positional argument.
+  <details>
+  <summary>Hint</summary>
+
+  ```js
+  db.restaurants.countDocuments({borough: "Queens", cuisine: "Italian"});
+  ```
+  </summary>
+
+  <details>
+  <summary>Expected results</summary>
+  There are 131 Italian restaurants in Queens.
+  </details>
+
+When you are done, proceed to the end of this lab.
