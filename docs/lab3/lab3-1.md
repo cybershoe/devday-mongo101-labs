@@ -36,7 +36,7 @@ You can return only specific fields by giving the fields you want to include a v
   > Notice that the `_id` field was included in your results, even though you didn't specify it in the projection document. The `_id` field is always included, unless explicitly excluded.
 
 ## Exclusion
-You can retun all fields except for specific ones by giving the fields you want to exclude a value of "0" in the projection response. For example, to return all fields except for inspection grades, your projection document would be:
+You can return all fields except for specific ones by giving the fields you want to exclude a value of "0" in the projection response. For example, to return all fields except for inspection grades, your projection document would be:
 ```python
 {grades: 0}
 ```
@@ -114,7 +114,7 @@ Since each driver is idiomatic to its language, the syntax for replicating a par
 
 2. In the "Exported Query" section, ensure "Python" is selected as the destination language. You should see your query formatted as a Python dict, complete with quoted key names.
 
-3. Select the "Include Import Statements" and "Include Driver Syntax" options. This will generate additional code that, in most cases, can be copied directly into your application. For example, in Python, the projection document is supplied as the `project` argument to `find()` or `find_one()`, or as the 2nd positional argument.
+3. Select the "Include Import Statements" and "Include Driver Syntax" options (you may need to scroll down to see these options.) This will generate additional code that, in most cases, can be copied directly into your application. For example, in Python, the projection document is supplied as the `project` argument to `find()` or `find_one()`, or as the 2nd positional argument.
   ![Export query screen](images/export_query.png)
 
 4. 🎓 *Extra Credit*: Try making a new Python program from your exported code.

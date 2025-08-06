@@ -16,7 +16,7 @@ MongoDB has 6 primary scalar comparison operators:
 | Operator | Meaning                  |
 |:--------:|--------------------------|
 | $eq      | Equal to                 |
-| $neq     | Not equal to             |
+| $ne      | Not equal to             |
 | $gt      | Greater than             |
 | $gte     | Greater than or equal to |
 | $lte     | Less than or equal to    |

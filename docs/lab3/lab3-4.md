@@ -27,7 +27,7 @@ We're going to look at a different collection for this example. The documents in
 
 ## Matching a single array element
 
-What if we wanted to find the customer with account numner `436090`?
+What if we wanted to find the customer with account number `436090`?
 
 1. Open Compass, if you haven't already done so, and navigate to the `customers` collection in the `sample_analytics` database.
 
