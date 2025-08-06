@@ -20,7 +20,7 @@ jumphost.
 3. Copy the connection string from [the last lab](/lab1/lab1-1?id=lab-finding-your-connection-string), 
 and paste it into the `URI` field in the New Connection dialog box.
   > [!TIP] 
-  > The jumphost is running Ubuntu Linux with the Xfce dekstop
+  > The jumphost is running Ubuntu Linux with the Xfce desktop
   > environment. If you are using a Mac, you'll need to use <kbd>Ctrl</kbd>+<kbd>C</kbd> and
   > <kbd>Ctrl</kbd>+<kbd>V</kbd> instead of <kbd>⌘</kbd>+<kbd>C</kbd> and <kbd>⌘</kbd>+<kbd>V</kbd> to copy and paste, respectively.
 4. Click "Save and Connect"

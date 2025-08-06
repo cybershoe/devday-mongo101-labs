@@ -79,7 +79,7 @@ You can return all fields except for specific ones by giving the fields you want
   ```
   </details>
 
-2. Modify the projection docuent to also exclude the `_id` and `restaurant_id` fields. Re-run `exclude_fields.py` and check your results.
+2. Modify the projection document to also exclude the `_id` and `restaurant_id` fields. Re-run `exclude_fields.py` and check your results.
   <details>
   <summary>Expected results</summary>
 

@@ -7,7 +7,7 @@ So far we have only been matching on equality. To query based on ranges, by excl
 
 - <span style="color:#1c00ff">age</span>: The field to evaluate
 - <span style="color:#ff0000">$gte</span>: The operator to evaluate this field with
-- <span style="color:#04a200">42</span>: The argument(s) for the operator. An operator may take a scalar value, an array, or a document of multuple parameters.
+- <span style="color:#04a200">42</span>: The argument(s) for the operator. An operator may take a scalar value, an array, or a document of multiple parameters.
 
 ## Searching for an inequality
 

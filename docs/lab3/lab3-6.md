@@ -6,7 +6,7 @@ MongoDB queries can specify a sort order and document limit. Language-specific d
 
 ## Specifying a sort order and limit
 
-Sort order is specfied by a document, where the keys are the fields to sort by, and the values are the sort order: 1 for ascending, -1 for descending. For example, to sort the `restaurants` collection in the `sample_restaurants` database first by borough, then by cuisine type, you would specify:
+Sort order is specified by a document, where the keys are the fields to sort by, and the values are the sort order: 1 for ascending, -1 for descending. For example, to sort the `restaurants` collection in the `sample_restaurants` database first by borough, then by cuisine type, you would specify:
 ```js
 {borough: 1, cuisine: 1}
 ```

@@ -2,7 +2,7 @@
 
 We have the data we need, but also a lot that we don't need. In this last stage, we're going to cherry-pick fields to be returned, and replace our output document with this new document.
 
-1. 1. Click "Add Stage"
+1. Click "Add Stage"
 
 2. In the dropdown, select `$replaceRoot`. The stage will pre-populate with placeholder stage definition.
 

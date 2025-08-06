@@ -59,7 +59,7 @@ The flexibility of the document model makes inserting data into MongoDB extremel
   > [!TIP]
   > If you closed the terminal, press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>\`</kbd> to re-launch it.
 
-6. The `insert_one()` method returs a result object with an `acknowledged` and an `inserted_id` attribute. You should see confirmation in the terminal that the document was created. 
+6. The `insert_one()` method returns a result object with an `acknowledged` and an `inserted_id` attribute. You should see confirmation in the terminal that the document was created. 
   ![Image of the output of the insert_one.py program](images/insert_one_acknowledged.png)
 
   Switch back to Compass and see that the database and collection have been created.
@@ -84,7 +84,7 @@ While the `.insert_one()` method takes a single object, the `.insert_many()` met
 
 4. In the terminal, run the `insert_many.py` program. Note the output of the program; whereas `insert_one()` returns a result with an `inserted_id` attribute containing a single ObjectID, `insert_many()`'s return object contains an `inserted_ids()` attribute, which is a list of ObjectIDs for each inserted document.
 
-5. Check in Compass to see that the new documents have been created. Notice that even in the database, the schema is flexible; some documents contain arrays with more or fewer items, and some documents have different poperties.
+5. Check in Compass to see that the new documents have been created. Notice that even in the database, the schema is flexible; some documents contain arrays with more or fewer items, and some documents have different properties.
   ![Image of compass containing the added documents](images/inserted_many_documents.png)
 
 When you are done, proceed to the next lab.

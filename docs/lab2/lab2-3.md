@@ -155,7 +155,7 @@ Instead we can use the `update_one()` and `update_many()` methods. These behave 
 ### Update documents
 Update documents have a different format than replacement documents. The update document contains one or more [update operators](https://www.mongodb.com/docs/manual/reference/operator/update/), that describe how to modify the document or documents matching the query filter. The update document is a dict, where the keys are the operators to apply, and the values are nested dicts that tell the update operator what field(s) to operate on.
 
-3. To correct the record for The Great Gatsby, modify the `update` dict to include the `$inc` operator. The value for this key is another dict containing describing the field to be incremented, and the amount by which to increment that field.
+3. To correct the record for The Great Gatsby, modify the `update` dict to include the `$inc` operator. The value for this key is another dict describing the field to be incremented, and the amount by which to increment that field.
 
   ```python
   update = {
@@ -171,7 +171,7 @@ Update documents have a different format than replacement documents. The update 
     ```
   <details>
   <summary>Expected results</summary>
-  The `update_one()` method will find the record fo The Great Gatsby, and increment the value of the `published_year` field to the correct value of 1925.
+  The `update_one()` method will find the record for The Great Gatsby, and increment the value of the `published_year` field to the correct value of 1925.
 
   ```bash
   ubuntu@ip-10-0-1-219:~/lab/lab2-3$ python update_book.py

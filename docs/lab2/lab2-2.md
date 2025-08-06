@@ -1,13 +1,15 @@
 # Retrieving documents
 
+In this section we'll be looking at retrieving data from MongoDB. We'll go over retrieving one or many documents, basic query syntax, and projection.etrieving documents
+
 In this section we'll be looking at retrieving data from MongoDB. We'll go over retreieving one or many documents, basic query syntax, and projection.
 
 ## Retrieving one document
 
-1. In VSCodium, open the file lab2-2/find_one.py and examine the code. Note the `collection.find_one` instruction. `find_one()` is a collection method that takes a query filter as its first argument, and returns a single document if at least one documement matching the query filter exists in the collection, and returns `None` otherwise.
+1. In VSCodium, open the file lab2-2/find_one.py and examine the code. Note the `collection.find_one` instruction. `find_one()` is a collection method that takes a query filter as its first argument, and returns a single document if at least one document matching the query filter exists in the collection, and returns `None` otherwise.
 
 > [!TIP]
-> The analagous mongosh/JavaScript method is `findOne()`
+> The analogous mongosh/JavaScript method is `findOne()`
 
 Read through the code of `find_one.py`. What do you expect to see on the console when you run it?
 
@@ -58,7 +60,7 @@ Much like `insert_one()`&mdash;which takes a single document&mdash;has its count
   ```
   What do you think the output of this program will be?
 
-2. In the terminal window, change to the lab2-2 directory, and run the `find_one.py` program.
+2. In the terminal window, run the `find.py` program.
   ```bash
   cd ~/lab/lab2-2
   python find.py 

@@ -2,4 +2,4 @@
 
 This concludes Lab 2 - Basic CRUD Operations.
 
-Please continue to Lab 3 - Indexes.
+Please continue to Lab 3 - More Advanced Queries.

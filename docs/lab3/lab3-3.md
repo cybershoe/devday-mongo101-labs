@@ -19,7 +19,7 @@ Consider the `restaurant` collection: the `address` field is an embedded documen
   <details>
   <summary>Expected results</summary>
   
-  The query returns no results. Try to break down the query the way MongoDB would. You are asking it to return all documents where the `address` field is *exactly equal* to the value `{zipcode: "11371"}`, but there are no document that match that condition; the embedded documents in thier `address` fields all have other values besides just `zipcode`. Instead of searching for a match on the field `address`, we need to ask MongoDB to search for a match on a the field `zipcode` *inside* a field called `address`.
+  The query returns no results. Try to break down the query the way MongoDB would. You are asking it to return all documents where the `address` field is *exactly equal* to the value `{zipcode: "11371"}`, but there are no document that match that condition; the embedded documents in their `address` fields all have other values besides just `zipcode`. Instead of searching for a match on the field `address`, we need to ask MongoDB to search for a match on a the field `zipcode` *inside* a field called `address`.
   </details>
 
 2. Create a query that will return all restaurants in the 11371 zip code. Run the query and check your results.
